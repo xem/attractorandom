@@ -1,10 +1,9 @@
 <a id=l></a><canvas id=a width=800 height=500 style=width:90%;height:80%><script>
 M=z=>Math.random()*z|0
 q=z=>z[M(2)]
-r=z=>z+'='+(M(2e3)-1e3)/100
+r=z=>z+'='+(z<'W'?(M(2e3)-1e3)/100:s(t)+`(${s(u)})${q("+-")+s(t)}(${s(u)})`)
 s=z=>"ABCD1"[M(5)]+"*"+z()
 t=z=>q`cos${u=z=>q("UV")}sin`
-w=z=>s(t)+`(${s(u)})${q("+-")+s(t)}(${s(u)})`
-l.href="#"+(l.innerHTML=q=(h=decodeURI(location.hash))?h.slice(1):[r`A`,r`B`,r`C`,r`D`,`X=${w()},Y=${w()},U=X,V=Y`])
+l.href="#"+(l.innerHTML=q=(h=decodeURI(location.hash))?h.slice(1):[r`A`,r`B`,r`C`,r`D`,r`X`,r`Y`,"U=X,V=Y"])
 setInterval("for(i=5e3;i--;a.getContext`2d`.fillRect(400+25*X,250+25*Y,.1,.1))with(Math)"+q,U=V=1)
 </script>
