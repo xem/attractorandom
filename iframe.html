@@ -1,51 +1,35 @@
-<meta charset=utf-8>
-<body style="margin: 0; font-size: 10px; font-family: monospace;">
-<a id=link style="background:#fff; position: fixed; top: 0; right: 0; font-size: 20px;">#</a>
-<input id=p style="width:95%">
-<canvas id=a width=800 height=500 style="width:99%; height: 85%;"></canvas>
+<a id=l>#</a>
+<input id=p style=width:90%>
+<canvas id=a width=800 height=500 style=width:99%;height:80%>
 <script>
-
-if(location.hash.slice(1) == ""){
-  A=(Math.random()*10-5).toFixed(2);
-  B=(Math.random()*10-5).toFixed(2);
-  C=(Math.random()*10-5).toFixed(2);
-  D=(Math.random()*10-5).toFixed(2);
-  func_X=["A*","B*","C*","D*",""][~~(Math.random()*5)]+["cos","sin"][~~(Math.random()*2)]+"("+["A*","B*","C*","D*",""][~~(Math.random()*5)]+["U","V"][~~(Math.random()*2)]+")"+["+","-"][~~(Math.random()*2)]+["A*","B*","C*","D*",""][~~(Math.random()*5)]+["cos","sin"][~~(Math.random()*2)]+"("+["A*","B*","C*","D*",""][~~(Math.random()*5)]+["U","V"][~~(Math.random()*2)]+")";
-  func_Y=["A*","B*","C*","D*",""][~~(Math.random()*5)]+["cos","sin"][~~(Math.random()*2)]+"("+["A*","B*","C*","D*",""][~~(Math.random()*5)]+["U","V"][~~(Math.random()*2)]+")"+["+","-"][~~(Math.random()*2)]+["A*","B*","C*","D*",""][~~(Math.random()*5)]+["cos","sin"][~~(Math.random()*2)]+"("+["A*","B*","C*","D*",""][~~(Math.random()*5)]+["U","V"][~~(Math.random()*2)]+")";
-  p.value='{"A":'+A+',"B":'+B+',"C":'+C+',"D":'+D+',"X":"'+func_X+'","Y":"'+func_Y+'"}';
-}
-
-else{
-  p.value = decodeURIComponent(location.hash.slice(1));
-  z=JSON.parse(p.value);
-  A=z.A;
-  B=z.B;
-  C=z.C;
-  D=z.D;
-  func_X=z.X;
-  func_Y=z.Y;
-}
-
-link.href="iframe.html#"+p.value;
-
-
+if(h=location.hash)[A,B,C,D,x,y]=JSON.parse(q=p.value=decodeURIComponent(h.slice(1)));
+else
+M=z=>Math.random(),
+r=z=>~~((M()*1e3-500))/100,
+A=r(),
+B=r(),
+C=r(),
+D=r(),
+s=z=>["A*","B*","C*","D*",""][~~(M()*5)],
+t=z=>["cos","sin"][~~(M()*2)],
+u=z=>"UV"[~~(M()*2)],
+v=z=>"+-"[~~(M()*2)],
+w=z=>s()+t()+"("+s()+u()+")"+v()+s()+t()+"("+s()+u()+")",
+x=w(),
+y=w(),
+q=p.value='['+[A,B,C,D,`"${x}"`,`"${y}"]`];
+l.href="iframe.html#"+q;
+c=a.getContext`2d`;
+c.fillStyle='rgba(0,0,0,.01)';
 setInterval(
-  function(){
-    for(i=0;i<10;i++){
-      with(Math){
-        X=eval(func_X);
-        Y=eval(func_Y);
-        a.getContext`2d`.fillRect(
-          400+25*X,
-          250+25*Y,
-          1,
-          1
-        )
-        U=X;
-        V=Y
-      }
-    }
-  },
-  U=V=X=Y=1
+z=>{
+for(i=0;i<1e4;i++)
+with(Math)
+X=eval(x),
+Y=eval(y),
+c.fillRect(400+25*X,250+25*Y,1,1),
+U=X,
+V=Y
+},U=V=X=Y=1
 )
 </script>
