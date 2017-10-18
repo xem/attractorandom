@@ -1,5 +1,5 @@
 <a id=l>#</a> <input id=p style=width:90%><canvas id=a width=800 height=500 style=width:99%;height:80%><script>
-(h=decodeURI(location.hash))?q=h.slice(1):(
+q=(h=decodeURI(location.hash))?h.slice(1):(
 M=z=>Math.random(),
 q=z=>z[M()*2|0],
 r=z=>~~((M()*1e3-500))/100,
@@ -8,7 +8,7 @@ t=z=>q(["cos","sin"]),
 u=z=>q("UV"),
 v=z=>q("+-"),
 w=z=>s()+t()+`(${s()+u()})${v()+s()+t()}(${s()+u()})`,
-q=`A=${r()};B=${r()};C=${r()};D=${r()};X=${w()};Y=${w()}`);
+`A=${r()};B=${r()};C=${r()};D=${r()};X=${w()};Y=${w()}`);
 l.href="#"+(p.value=q);
 setInterval(z=>{for(i=5e3;i--;)with(Math)eval(q),a.getContext`2d`.fillRect(400+25*X,250+25*Y,.1,.1),U=X,V=Y},U=V=1)
 </script>
