@@ -1,8 +1,8 @@
 <a id=l></a><canvas id=a width=800 height=500 style=width:90%;height:80%><script>
 M=z=>Math.random()*z|0
 q=z=>z[M(2)]
-r=z=>z+'='+(z<'W'?(M(2e3)-1e3)/100:s(1)+s(0)+`)${q("+-")+s(1)+s(0)})`)
-s=z=>"ABCD1"[M(5)]+"*"+(z?q`cos(${0}sin(`:q("UV"))
-l.href="#"+(l.innerHTML=q=(h=decodeURI(location.hash))?h.slice(1):[[...'ABCDXY'].map(r),"U=X,V=Y"])
+s=z=>"ABCD1"[M(5)]+"*"+(z?q`cos(${0}sin(`+s():q("UV")+')')
+l.href="#"+(l.innerHTML=q=(h=decodeURI(location.hash))?h.slice(1):[[...'ABCDXY'].map(
+z=>z+'='+(z<'W'?(M(2e3)-1e3)/100:s(1)+q("+-")+s(1))),"U=X,V=Y"])
 setInterval("for(i=5e3;i--;a.getContext`2d`.fillRect(400+25*X,250+25*Y,.1,.1))with(Math)"+q,U=V=1)
 </script>
