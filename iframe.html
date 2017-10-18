@@ -1,6 +1,6 @@
-<a id=l></a><canvas id=a width=800 height=500 style=width:90%;height:80%><script>
+<a id=l></a><canvas id=a width=900 height=900 style=width:90%;height:80%><script>
 M=z=>Math.random()*z|0
-s=z=>`+${(M(2e3)-1e3)/100}*`+(z?"UV"[M(2)]:`Math.${M(2)?"cos":"sin"}(${s(1)})`)
-l.href="#"+(l.innerHTML=q=(h=decodeURI(location.hash))?h.slice(1):`X=${s()+s()},Y=${s()+s()},U=X,V=Y`)
-setInterval("for(i=5e3;i--;a.getContext`2d`.fillRect(400+25*X,250+25*Y,.1,.1))"+q,U=V=1)
+s=z=>`+${(M(2e3)-1e3)/100}*`+(z?"XY"[M(2)]:`Math.${M(2)?"cos":"sin"}(${s(1)})`)
+l.href="#"+(l.innerHTML=q=(h=decodeURI(location.hash))?h.slice(1):`[X,Y]=[${[s()+s(),s()+s()]}]`)
+setInterval("for(i=5e3;i--;a.getContext`2d`.fillRect(450+20*X,450+20*Y,.1,.1))"+q,X=Y=1)
 </script>
