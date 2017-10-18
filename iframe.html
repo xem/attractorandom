@@ -1,6 +1,5 @@
 <a id=l>#</a> <input id=p style=width:90%><canvas id=a width=800 height=500 style=width:99%;height:80%><script>
-if(h=decodeURI(location.hash))eval(q=h.slice(1));
-else
+(h=decodeURI(location.hash))?q=h.slice(1):(
 M=z=>Math.random(),
 q=z=>z[M()*2|0],
 r=z=>~~((M()*1e3-500))/100,
@@ -9,9 +8,7 @@ t=z=>q(["cos","sin"]),
 u=z=>q("UV"),
 v=z=>q("+-"),
 w=z=>s()+t()+`(${s()+u()})${v()+s()+t()}(${s()+u()})`,
-eval(q=`A=${r()},B=${r()},C=${r()},D=${r()},x='${w()}',y='${w()}'`);
+q=`A=${r()};B=${r()};C=${r()};D=${r()};X=${w()};Y=${w()}`);
 l.href="#"+(p.value=q);
-c=a.getContext`2d`;
-c.fillStyle='rgba(0,0,0,.01)';
-setInterval(z=>{for(i=5e3;i--;)with(Math)X=eval(x),Y=eval(y),c.fillRect(400+25*X,250+25*Y,1,1),U=X,V=Y},U=V=X=Y=1)
+setInterval(z=>{for(i=5e3;i--;)with(Math)eval(q),a.getContext`2d`.fillRect(400+25*X,250+25*Y,.1,.1),U=X,V=Y},U=V=1)
 </script>
