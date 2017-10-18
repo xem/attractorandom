@@ -1,13 +1,12 @@
 <a id=l></a><canvas id=a width=800 height=500 style=width:90%;height:80%><script>
-q=(h=decodeURI(location.hash))?h.slice(1):(
-M=z=>Math.random()*z|0,
-q=z=>z[M(2)],
-r=z=>(M(1e3)/100-5).toFixed(2),
-s=z=>"ABCD1"[M(5)]+"*",
-t=z=>q`cos${u=z=>q("UV")}sin`,
-v=z=>q("+-"),
-w=z=>s()+t()+`(${s()+u()})${v()+s()+t()}(${s()+u()})`,
-`A=${r()},B=${r()},C=${r()},D=${r()},X=${w()},Y=${w()},U=X,V=Y`);
+M=z=>Math.random()*z|0;
+q=z=>z[M(2)];
+r=z=>(M(1e3)/100-5).toFixed(2);
+s=z=>"ABCD1"[M(5)]+"*";
+t=z=>q`cos${u=z=>q("UV")}sin`;
+v=z=>q("+-");
+w=z=>s()+t()+`(${s()+u()})${v()+s()+t()}(${s()+u()})`;
+q=(h=decodeURI(location.hash))?h.slice(1):`A=${r()},B=${r()},C=${r()},D=${r()},X=${w()},Y=${w()},U=X,V=Y`;
 l.href="#"+(l.innerHTML=q);
 setInterval("for(i=5e3;i--;a.getContext`2d`.fillRect(400+25*X,250+25*Y,.1,.1))with(Math)"+q,U=V=1)
 </script>
